@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body  {
+    display: flex;
+    margin: 3px;
+    flex: 1 1 100vw;
+    flex-wrap: wrap;
+    
+}
+
+header , nav, main, aside, footer {
+    display: flex;
+    margin: 3px;
+    background-color: #a1a1a1;
+
+}
+
+header {
+    flex: 1 1 100vw;
+    height: 100px;
+}
+
+header #logo {
+    flex: 0 1 200px;
+    background-color: #c9c9c9;
+}
+
+#openMenu, #closeMenu {
+    border: none;
+    background: none;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 0 5px 0 5px;
+    cursor: pointer;
+    display: none;
+}
+
+nav {
+    flex: 1 1 100vw; /* 100% da largura horizontal */
+    align-items: center;
+    justify-content: flex-end;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav a {
+    margin: 3%;
+    font-size: 20pt;
+}
+
+main {
+    flex: 20 1 500px;
+    height: calc(100vh - 224px); /* altura total do visor (100vh) menos a altura do header e footer e nav (300px) e as margens de cada elemento (3px * 6 = 30px) */
+    flex-wrap: wrap;
+    overflow: auto;
+}
+
+aside {
+    flex: 1 1 200px;
+}
+
+footer {
+    flex: 1 1 100vw;
+    height: 100px;
+}
+
+@media only screen and (max-width: 923px) {  /* quando o aside não couber na mesma linha que main */
+    main {
+        height: calc(100vh - 330px); /* somatório das alturas fixas e margens */
+    }
+    aside {
+        flex: 1 1 100vw;
+        height: 100px;
+    }
+}
+
+@media only screen and (max-width: 717px) {
+    #openMenu, #closeMenu {
+        display: block;
+    }
+
+    #openMenu {
+        margin-left: auto;
+    }
+
+    #closeMenu {
+        position: fixed;
+        top: 15px;
+        right: 15px;
+    }
+
+    nav {
+        position: fixed;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, .8);
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        display: none;
+        opacity: 0;
+        transition: 0.3s;
+    }
+}
