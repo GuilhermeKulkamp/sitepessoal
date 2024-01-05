@@ -12,23 +12,19 @@ body  {
     
 }
 
-header , nav, main, aside, footer {
+nav {
     display: flex;
     margin: 3px;
     background-color: #a1a1a1;
 
 }
 
-header {
-    flex: 1 1 100vw;
-    height: 100px;
-}
 
 nav {
     flex: 1 1 200px;
-    flex-direction: column;
-    align-items:start;
-    justify-content:start;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 a {
@@ -37,42 +33,7 @@ a {
 }
 
 nav a {
-    margin: 5%;
-    font-size: 20pt;
-}
-
-main {
-    flex: 20 1 500px;
-    height: calc(100vh - 224px); /* altura total do visor (100vh) menos a altura do header e footer (200px) e as margens de cada elemento (3px * 4 = 24px) */
-}
-
-aside {
-    flex: 1 1 200px;
-}
-
-footer {
-    flex: 1 1 100vw;
-    height: 100px;
-}
-
-@media only screen and (max-width: 923px) {  /* quando o aside não couber na mesma linha que main */
-    main {
-        height: calc(100vh - 330px);
-    }
-    aside {
-        flex: 1 1 100vw;
-        height: 100px;
-    }
-}
-
-@media only screen and (max-width: 717px) { /* quando o nav não couber na mesma linha que main */
-    main {
-        height: calc(100vh - 436px);
-    }
-    nav {
-        height: 100px;
-        align-items: center;
-        text-align: center;
-        flex-direction: row;
-    }
+    margin: 3px;
+    padding: 1rem;
+    font-size: 2rem;
 }
